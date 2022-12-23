@@ -12,13 +12,27 @@ namespace Compression
     {
         static void Main(string[] args)
         {
-            byte[] FileBytes = File.ReadAllBytes("test_TNT.png");
+            char[] viewChar = new char[7] { 'A', 'B', 'C', 'D', 'E', 'F', 'G' };
+            ConsoleColor[] viewCharColors = new ConsoleColor[7] { ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Magenta, ConsoleColor.Cyan, ConsoleColor.DarkGreen, ConsoleColor.Blue, ConsoleColor.DarkYellow };
+
+
+            byte[] FileBytes = File.ReadAllBytes("test.txt");
             Console.WriteLine("Original: ");
-            CompressEngine.WriteBytes(FileBytes, new char[3] { 'A', 'B', 'C' }, new ConsoleColor[3] {ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Magenta });
+
+
+            CompressEngine.WriteBytes(FileBytes, viewChar, viewCharColors);
+
+
             FileBytes = CompressEngine.BasicCompressBytes(FileBytes);
+
+
             Console.WriteLine();
             Console.WriteLine("Compresed: ");
-            CompressEngine.WriteBytes(FileBytes, new char[3] { 'A', 'B', 'C' }, new ConsoleColor[3] { ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Magenta });
+
+
+            CompressEngine.WriteBytes(FileBytes, viewChar, viewCharColors);
+
+
             File.WriteAllBytes("data.lol", FileBytes);
             Console.ReadKey(true);
         }
