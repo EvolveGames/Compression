@@ -13,11 +13,12 @@ namespace Compression
         {
             byte[] FileBytes = File.ReadAllBytes("test.txt");
             Console.WriteLine("Original: ");
-            WriteBytes(FileBytes, "O");
+            WriteBytes(FileBytes, 'O');
             FileBytes = CompressBytes(FileBytes);
             Console.WriteLine();
             Console.WriteLine("Compresed: ");
-            WriteBytes(FileBytes, "O");
+            WriteBytes(FileBytes, 'O');
+            File.WriteAllBytes("data.dt", FileBytes);
             Console.ReadKey(true);
         }
 
@@ -50,11 +51,11 @@ namespace Compression
             return output;
         }
 
-        public static void WriteBytes(byte[] input, string view)
+        public static void WriteBytes(byte[] input, char view)
         {
             for (int i = 0; i < input.Length; i++)
             {
-                if (input[i] == Encoding.Default.GetBytes(view)[0])
+                if (input[i] == Encoding.Default.GetBytes(view.ToString())[0])
                 {
                     ConsoleColor InitColor = Console.ForegroundColor;
                     Console.ForegroundColor = ConsoleColor.Yellow;
@@ -65,5 +66,7 @@ namespace Compression
             }
 
         }
+
+        
     }
 }
