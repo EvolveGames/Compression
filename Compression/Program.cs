@@ -12,20 +12,58 @@ namespace Compression
         static void Main(string[] args)
         {
             byte[] FileBytes = File.ReadAllBytes("test.txt");
+            Console.WriteLine("Original: ");
+            WriteBytes(FileBytes, "O");
+            FileBytes = CompressBytes(FileBytes);
+            Console.WriteLine();
+            Console.WriteLine("Compresed: ");
+            WriteBytes(FileBytes, "O");
+            Console.ReadKey(true);
+        }
 
-            for (int i = 0; i < FileBytes.Length; i++)
+        public static byte[] CompressBytes(byte[] input)
+        {
+            List<byte[]> compressedData = new List<byte[]>();
+            for (int i = 0; i < input.Length; i++)
             {
-                if (FileBytes[i] == Encoding.Default.GetBytes("O")[0])
+                int count = 1;
+
+                while (i + 1 < input.Length && input[i] == input[i + 1])
+                {
+                    count++;
+                    i++;
+                }
+                byte[] compressedElement = new byte[2];
+                compressedElement[0] = (byte)count;
+                compressedElement[1] = input[i];
+
+                compressedData.Add(compressedElement);
+            }
+
+            byte[] output = new byte[compressedData.Count * 2];
+
+            for (int i = 0; i < compressedData.Count; i++)
+            {
+                Array.Copy(compressedData[i], 0, output, i * 2, 2);
+            }
+
+            return output;
+        }
+
+        public static void WriteBytes(byte[] input, string view)
+        {
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i] == Encoding.Default.GetBytes(view)[0])
                 {
                     ConsoleColor InitColor = Console.ForegroundColor;
                     Console.ForegroundColor = ConsoleColor.Yellow;
-                    Console.Write($"{FileBytes[i]} ");
+                    Console.Write($"{input[i]} ");
                     Console.ForegroundColor = InitColor;
                 }
-                else Console.Write($"{FileBytes[i]} ");
+                else Console.Write($"{input[i]} ");
             }
 
-            Console.ReadKey(true);
         }
     }
 }
