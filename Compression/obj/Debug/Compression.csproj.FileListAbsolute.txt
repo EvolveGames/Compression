@@ -1,0 +1,8 @@
+C:\Users\Dominik\source\repos\Compression\Compression\bin\Debug\Compression.exe.config
+C:\Users\Dominik\source\repos\Compression\Compression\bin\Debug\Compression.exe
+C:\Users\Dominik\source\repos\Compression\Compression\bin\Debug\Compression.pdb
+C:\Users\Dominik\source\repos\Compression\Compression\obj\Debug\Compression.csproj.AssemblyReference.cache
+C:\Users\Dominik\source\repos\Compression\Compression\obj\Debug\Compression.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dominik\source\repos\Compression\Compression\obj\Debug\Compression.csproj.CoreCompileInputs.cache
+C:\Users\Dominik\source\repos\Compression\Compression\obj\Debug\Compression.exe
+C:\Users\Dominik\source\repos\Compression\Compression\obj\Debug\Compression.pdb
