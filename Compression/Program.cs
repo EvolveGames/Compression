@@ -27,6 +27,7 @@ namespace Compression
                 if (i == Console.WindowWidth)
                 {
                     Console.Write('\n');
+                    Console.WriteLine("Evole");
                 }
             }
 
