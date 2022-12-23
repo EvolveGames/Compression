@@ -24,7 +24,6 @@ namespace Compression
                 }
                 else Console.Write($"{FileBytes[i]} ");
 
-
                 if (i == Console.WindowWidth)
                 {
                     Console.Write('\n');
