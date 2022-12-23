@@ -23,12 +23,6 @@ namespace Compression
                     Console.ForegroundColor = InitColor;
                 }
                 else Console.Write($"{FileBytes[i]} ");
-
-                if (i == Console.WindowWidth)
-                {
-                    Console.Write('\n');
-                    Console.WriteLine("Evole");
-                }
             }
 
             Console.ReadKey(true);
