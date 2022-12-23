@@ -8,7 +8,7 @@ namespace Compression
 {
     public static class CompressEngine
     {
-        public static byte[] CompressBytes(byte[] input)
+        public static byte[] BasicCompressBytes(byte[] input)
         {
             List<byte[]> compressedData = new List<byte[]>();
             for (int i = 0; i < input.Length; i++)

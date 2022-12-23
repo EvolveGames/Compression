@@ -15,7 +15,7 @@ namespace Compression
             byte[] FileBytes = File.ReadAllBytes("test_TNT.png");
             Console.WriteLine("Original: ");
             CompressEngine.WriteBytes(FileBytes, new char[3] { 'A', 'B', 'C' }, new ConsoleColor[3] {ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Magenta });
-            FileBytes = CompressEngine.CompressBytes(FileBytes);
+            FileBytes = CompressEngine.BasicCompressBytes(FileBytes);
             Console.WriteLine();
             Console.WriteLine("Compresed: ");
             CompressEngine.WriteBytes(FileBytes, new char[3] { 'A', 'B', 'C' }, new ConsoleColor[3] { ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Magenta });
