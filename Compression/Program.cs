@@ -16,15 +16,14 @@ namespace Compression
             ConsoleColor[] viewCharColors = new ConsoleColor[7] { ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Magenta, ConsoleColor.Cyan, ConsoleColor.DarkGreen, ConsoleColor.Blue, ConsoleColor.DarkYellow };
 
 
-            byte[] FileBytes = File.ReadAllBytes("test.txt");
+            byte[] FileBytes = File.ReadAllBytes("data.lol");
             Console.WriteLine("Original: ");
 
 
             CompressEngine.WriteBytes(FileBytes, viewChar, viewCharColors);
 
 
-            FileBytes = CompressEngine.BasicCompressBytes(FileBytes);
-
+            FileBytes = CompressEngine.BasicDecompressBytes(FileBytes);
 
             Console.WriteLine();
             Console.WriteLine("Compresed: ");
@@ -33,7 +32,7 @@ namespace Compression
             CompressEngine.WriteBytes(FileBytes, viewChar, viewCharColors);
 
 
-            File.WriteAllBytes("data.lol", FileBytes);
+            File.WriteAllBytes("decompressedData.txt", FileBytes);
             Console.ReadKey(true);
         }
     }

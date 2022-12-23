@@ -37,6 +37,20 @@ namespace Compression
             return output;
         }
 
+        public static byte[] BasicDecompressBytes(byte[] input)
+        {
+            byte[] output = new byte[0];
+            for(int i = 0; i < input.Length / 2; i++)
+            {
+                for(int j = 0; j < (int)input[i * 2]; j++)
+                {
+                    Array.Resize(ref output, output.Length + 1);
+                    output[output.Length - 1] = input[i * 2 + 1];
+                }
+            }
+            return output;
+        }
+
         public static void WriteBytes(byte[] input, char[] view, ConsoleColor[] colors)
         {
             for (int i = 0; i < input.Length; i++)
