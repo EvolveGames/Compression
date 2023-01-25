@@ -16,7 +16,7 @@ namespace Compression
             ConsoleColor[] viewCharColors = new ConsoleColor[7] { ConsoleColor.Yellow, ConsoleColor.Green, ConsoleColor.Magenta, ConsoleColor.Cyan, ConsoleColor.DarkGreen, ConsoleColor.Blue, ConsoleColor.DarkYellow };
 
 
-            byte[] FileBytes = File.ReadAllBytes("data.lol");
+            byte[] FileBytes = File.ReadAllBytes("data.dat");
             Console.WriteLine("Original: ");
 
 
